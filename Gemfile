@@ -43,3 +43,8 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4'
+gem 'zurb-foundation', '~> 4.0.0'
+
+gem 'nifty-generators', '0.4.6'
