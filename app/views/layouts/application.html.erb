@@ -13,7 +13,10 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "Jon and Joanne" %></title>
+
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
 
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
@@ -21,10 +24,29 @@
 
   <body>
 
-    <%= yield %>
+    <header>
+      <div class="row">
+        <div class="twelve columns">
+          <a href='/'>LOGO</a>
+          <nav class="top-nav">
+            <ul>
+              <li <% if params[:controller] == 'pages' && params[:action] == 'about_us' %>class="current"<% end %>><a href="/about-us">Our Story</a></li>
+              <li <% if params[:controller] == 'pages' && params[:action] == 'bridal_party' %>class="current"<% end %>><a href="/bridal-party">Bridal Party</a></li>
+              <li <% if params[:controller] == 'pages' && params[:action] == 'wedding_details' %>class="current"<% end %>><a href="/wedding-details">Wedding Details</a></li>
+              <li <% if params[:controller] == 'pages' && params[:action] == 'rsvp' %>class="current"<% end %>><a href="/rsvp">RSVP</a></li>
+              <li <% if params[:controller] == 'pages' && params[:action] == 'registry' %>class="current"<% end %>><a href="/registry">Registry</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <%= yield %>
+      </div>
+    </div>
 
     
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
   </body>
 </html>

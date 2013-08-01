@@ -1,0 +1,62 @@
+<div class="about-us">
+
+  <div class="welcome">
+    <div class="row">
+      <div class="large-8 columns">
+        Welcome! We're so excited to celebrate with you on January 25th.  We can't wait to see everyone!
+      </div>
+      <div class="large-4 columns">
+        <div id="countdown">
+          <span class="countdown_row countdown_show4">
+            <span class="countdown_section">
+              <span class="countdown_amount">177</span><br>
+              Days
+            </span>
+            <span class="countdown_section">
+              <span class="countdown_amount">1</span><br>
+              Hour
+            </span>
+            <span class="countdown_section">
+              <span class="countdown_amount">52</span><br>
+              Minutes
+            </span>
+            <span class="countdown_section">
+              <span class="countdown_amount">43</span><br>
+              Seconds
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row bottom-bordered">
+    <div class="large-6 columns">
+      <h2>HER</h2>
+      <p>This is some stuff about Joanne! Blah blah blah :)</p>
+    </div>
+    <div class="large-6 columns">
+      <h2>HIM</h2>
+      <p>And here is some stuff about Jon! I am a boy!</p>
+    </div>
+  </div>
+
+  <h1>The Proposal <span class="byline">by Jon</span></h1>
+  <div class="row">
+    <div class="large-6 columns">
+      <p>Phew, this was a tough one!</p>
+    </div>
+    <div class="large-6 columns">
+      <img src="http://placehold.it/700x500" />
+    </div>
+  </div>
+
+</div>
+
+<script>
+  $(function () {
+    var weddingDay = new Date();
+    weddingDay = new Date(2014, 0, 25);
+    $('#countdown').countdown({until: weddingDay});
+  });
+</script>

@@ -13,3 +13,125 @@
 @import "foundation_and_overrides.scss";
 @import 'compass';
 
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700|Enriqueta:400,700);
+
+body {
+  background-color: #f6f6f6;
+}
+
+.row.bottom-bordered {
+  border-bottom: #cdcdcd 1px solid;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: normal;
+}
+
+h1 { font-size: 2.2em; }
+h2 { font-size: 1.7em; }
+
+
+p {
+  line-height: 1.2em;
+}
+
+header {
+  padding: 15px 0 50px;
+  nav.top-nav {
+    text-align: center;
+    ul {
+      display: inline;
+      margin: 0;
+      li {
+        font-size: 1.4em;
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        display: inline;
+        margin: 0 20px;
+        a {
+          color: #222;
+          padding-bottom: 5px;
+        }
+        &.current a {
+          border-bottom: 5px solid #222;
+        }
+      }
+    }
+  }
+}
+
+.about-us {
+  .welcome {
+    background-color: white;
+    padding: 20px;
+    font-family: Arial;
+    font-style: italic;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  .byline {
+    color: #999;
+    font-size: 0.5em;
+  }
+}
+
+#countdown {
+  font-style: normal;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+
+  .countdown_section {
+    display: block;
+    float: left;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .countdown_amount {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4em;
+  }
+}
+
+.bridal-party {
+  .name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4em;
+  }
+  .title {
+    color: #999;
+  }
+  .officiant {
+    text-align: center;
+    line-height: 1.6em;
+  }
+}
+
+.wedding-details {
+  h1, h2 {
+    text-align: center;
+  }
+  .info {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    span {
+      font-weight: bold;
+    }
+  }
+  .event {
+    padding-bottom: 10px;
+    .time {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    .name {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  }
+}
