@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -48,3 +48,11 @@ gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4'
 gem 'zurb-foundation', '~> 4.0.0'
 
 gem 'nifty-generators', '0.4.6'
+
+# RSpec testing suite
+gem 'rspec-rails' 
+gem 'factory_girl_rails'
+gem 'faker' 
+gem 'capybara' 
+gem 'guard-rspec' 
+gem 'launchy'
