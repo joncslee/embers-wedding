@@ -3,7 +3,7 @@ EmbersWedding::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # root 'pages#landing'
-  root 'pages#about_us'
+  root 'pages#landing'
 
   get 'about-us' => 'pages#about_us'
   get 'bridal-party' => 'pages#bridal_party'

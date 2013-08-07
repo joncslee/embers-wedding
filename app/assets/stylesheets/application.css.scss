@@ -15,8 +15,12 @@
 
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,700|Enriqueta:400,700);
 
+$primary-color: #eed15d;
+$secondary-color: #81b4c6;
+
 body {
   background-color: #f6f6f6;
+  // background: image_url('farmer.png');
 }
 
 .row.bottom-bordered {
@@ -39,7 +43,10 @@ p {
 }
 
 header {
-  padding: 15px 0 50px;
+  padding: 0 0 50px;
+  img {
+    margin-bottom: 15px;
+  }
   nav.top-nav {
     text-align: center;
     ul {
@@ -55,27 +62,39 @@ header {
         a {
           color: #222;
           padding-bottom: 5px;
+          &:hover {
+            border-bottom: 5px solid $secondary-color;
+          }
         }
         &.current a {
-          border-bottom: 5px solid #222;
+          border-bottom: 5px solid $primary-color;
         }
       }
     }
   }
 }
 
+.welcome {
+  background-color: white;
+  padding: 20px;
+  font-family: Arial;
+  font-style: italic;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
 .about-us {
-  .welcome {
-    background-color: white;
-    padding: 20px;
-    font-family: Arial;
-    font-style: italic;
-    font-size: 1.2em;
-    margin-bottom: 20px;
-  }
   .byline {
-    color: #999;
+    color: $primary-color;
     font-size: 0.5em;
+  }
+  .footnote {
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+  }
+  .photos {
+    text-align: center;
   }
 }
 
@@ -101,6 +120,9 @@ header {
   .name {
     font-family: 'Oswald', sans-serif;
     font-size: 1.4em;
+  }
+  li.main .name {
+    color: $secondary-color;
   }
   .title {
     color: #999;
@@ -134,4 +156,13 @@ header {
       margin-bottom: 5px;
     }
   }
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  margin: 20px 0;
+  background-color: $secondary-color;
+  color: white;
+  font-weight: bold;
 }

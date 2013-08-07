@@ -15,8 +15,6 @@
 
   	<title><%= content_for?(:title) ? yield(:title) : "Jon and Joanne" %></title>
 
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
 
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
@@ -25,11 +23,12 @@
   <body>
 
     <header>
+      <%= image_tag 'sand.jpg', :style => 'width: 100%;' %>
       <div class="row">
         <div class="twelve columns">
-          <a href='/'>LOGO</a>
           <nav class="top-nav">
             <ul>
+              <li <% if params[:controller] == 'pages' && params[:action] == 'landing' %>class="current"<% end %>><a href="/">Home</a></li>
               <li <% if params[:controller] == 'pages' && params[:action] == 'about_us' %>class="current"<% end %>><a href="/about-us">Our Story</a></li>
               <li <% if params[:controller] == 'pages' && params[:action] == 'bridal_party' %>class="current"<% end %>><a href="/bridal-party">Bridal Party</a></li>
               <li <% if params[:controller] == 'pages' && params[:action] == 'wedding_details' %>class="current"<% end %>><a href="/wedding-details">Wedding Details</a></li>
@@ -47,6 +46,15 @@
       </div>
     </div>
 
+    <footer>
+      an embers+arias production
+    </footer>
+
+    <script>
+      // $("body").find("*").css("font-family", "Comic Sans MS"); 
+    </script>
     
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
   </body>
 </html>
