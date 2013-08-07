@@ -32,4 +32,12 @@ describe Guest do
     guest = FactoryGirl.create(:guest)
     guest.token.length.should == 6
   end
+
+  it "doesn't re-generate a token when re-saving a guest" do
+    guest = FactoryGirl.create(:guest)
+    old_token = guest.token
+    guest.save!
+    new_token = guest.token
+    old_token.should == new_token
+  end
 end
