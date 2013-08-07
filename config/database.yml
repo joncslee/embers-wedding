@@ -18,8 +18,9 @@ test:
 
 
 production:
-  adapter: mysql2
+  adapter: postgresql
+  encoding: unicode
   database: wedding_production
-  username: root
+  pool: 5
+  username: joncslee
   password: 
-  socket: /tmp/mysql.sock
