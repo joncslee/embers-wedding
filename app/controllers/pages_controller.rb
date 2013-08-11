@@ -1,8 +1,12 @@
 class PagesController < ApplicationController
   def landing
+    @guest = Guest.new
   end
 
   def about_us
+  end
+
+  def proposal
   end
 
   def bridal_party
@@ -14,7 +18,13 @@ class PagesController < ApplicationController
   def music
   end
 
+  def rsvp
+  end
+
   def registry
+  end
+
+  def things_to_do
   end
 
 end

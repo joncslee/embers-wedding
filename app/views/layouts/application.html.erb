@@ -15,7 +15,6 @@
 
   	<title><%= content_for?(:title) ? yield(:title) : "Jon and Joanne" %></title>
 
-
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
@@ -23,38 +22,48 @@
   <body>
 
     <header>
-      <%= image_tag 'sand.jpg', :style => 'width: 100%;' %>
-      <div class="row">
-        <div class="twelve columns">
-          <nav class="top-nav">
-            <ul>
-              <li <% if params[:controller] == 'pages' && params[:action] == 'landing' %>class="current"<% end %>><a href="/">Home</a></li>
-              <li <% if params[:controller] == 'pages' && params[:action] == 'about_us' %>class="current"<% end %>><a href="/about-us">Our Story</a></li>
-              <li <% if params[:controller] == 'pages' && params[:action] == 'bridal_party' %>class="current"<% end %>><a href="/bridal-party">Bridal Party</a></li>
-              <li <% if params[:controller] == 'pages' && params[:action] == 'wedding_details' %>class="current"<% end %>><a href="/wedding-details">Wedding Details</a></li>
-              <li <% if params[:controller] == 'pages' && params[:action] == 'rsvp' %>class="current"<% end %>><a href="/rsvp">RSVP</a></li>
-              <li <% if params[:controller] == 'pages' && params[:action] == 'registry' %>class="current"<% end %>><a href="/registry">Registry</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
+      <%= image_tag 'header.jpg', :style => 'width: 100%;', :id => 'header' %>
     </header>
 
     <div class="row">
-      <div class="large-12 columns">
+      <div class="large-2 columns">
+        <ul class='side-nav'>
+          <li <% if params[:controller] == 'pages' && params[:action] == 'landing' %>class="current"<% end %>><a href="/">Home</a></li>
+          <li <% if params[:controller] == 'pages' && params[:action] == 'about_us' %>class="current"<% end %>><a href="/about-us">About Us</a></li>
+          <li <% if params[:controller] == 'pages' && params[:action] == 'proposal' %>class="current"<% end %>><a href="/proposal">The Proposal</a></li>
+          <li <% if params[:controller] == 'pages' && params[:action] == 'bridal_party' %>class="current"<% end %>><a href="/bridal-party">Bridal Party</a></li>
+          <li <% if params[:controller] == 'pages' && params[:action] == 'wedding_details' %>class="current"<% end %>><a href="/wedding-details">Wedding Details</a></li>
+          <li <% if params[:controller] == 'pages' && params[:action] == 'rsvp' %>class="current"<% end %>><a href="/rsvp">RSVP</a></li>
+          <li <% if params[:controller] == 'pages' && params[:action] == 'registry' %>class="current"<% end %>><a href="/registry">Registry</a></li>
+          <li <% if params[:controller] == 'pages' && params[:action] == 'things_to_do' %>class="current"<% end %>><a href="/things-to-do">Things To Do</a></li>
+        </ul>
+      </div>
+
+      <div class="large-10 columns">
         <%= yield %>
       </div>
     </div>
 
     <footer>
-      an embers+arias production
+      an <a target="_blank" href="http://embers-and-arias.tumblr.com/">embers+arias</a> production
     </footer>
 
     <script>
       // $("body").find("*").css("font-family", "Comic Sans MS"); 
     </script>
-    
+
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
+
+    <%= yield(:javascript) %>
+
+    <script>
+      $('img#header').hover(function() {
+        $(this).attr('src', '/assets/header2.jpg');
+      }, function() {
+        $(this).attr('src', '/assets/header.jpg');
+      });
+    </script>
+    
   </body>
 </html>
