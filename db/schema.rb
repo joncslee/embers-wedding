@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130802002059) do
+ActiveRecord::Schema.define(version: 20130810204825) do
 
   create_table "guests", force: true do |t|
     t.string   "first_name"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 20130802002059) do
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "address"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.string   "country"
+    t.text     "notes"
   end
 
 end

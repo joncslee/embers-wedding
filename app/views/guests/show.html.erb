@@ -1,0 +1,51 @@
+
+<p>
+  <strong>First Name:</strong>
+  <%= @guest.first_name %>
+</p>
+<p>
+  <strong>Last Name:</strong>
+  <%= @guest.last_name %>
+</p>
+<p>
+  <strong>Token:</strong>
+  <%= @guest.token %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @guest.address %>
+</p>
+<p>
+  <strong>Address1:</strong>
+  <%= @guest.address1 %>
+</p>
+<p>
+  <strong>Address2:</strong>
+  <%= @guest.address2 %>
+</p>
+<p>
+  <strong>City:</strong>
+  <%= @guest.city %>
+</p>
+<p>
+  <strong>State:</strong>
+  <%= @guest.state %>
+</p>
+<p>
+  <strong>Zipcode:</strong>
+  <%= @guest.zipcode %>
+</p>
+<p>
+  <strong>Country:</strong>
+  <%= @guest.country %>
+</p>
+<p>
+  <strong>Notes:</strong>
+  <%= @guest.notes %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_guest_path(@guest) %> |
+  <%= link_to "Destroy", @guest, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", guests_path %>
+</p>

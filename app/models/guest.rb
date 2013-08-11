@@ -9,6 +9,30 @@ class Guest < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
+  def address
+    a = ""
+    a += "#{address1}\r" if address1.present?
+    a += "#{address2}\r" if address2.present?
+    a += "#{city}, #{state} #{zipcode}"
+    a
+  end
+
+  def self.export_to_google_doc
+    username = ENV['WEDDING_DOC_USERNAME']
+    password = ENV['WEDDING_DOC_PASSWORD']
+    session = GoogleDrive.login(username, password)
+
+    ws = session.spreadsheet_by_key("0As1QuI50fA28dEdDaWRNeHV3bjNRTy1CT2h0aVBNU3c").worksheets[7]
+
+    ws[1, 1] = 'Name'
+    ws[1, 2] = 'Address'
+    self.all.each_with_index do |guest, i|
+      ws[i + 2, 1] = guest.name
+      ws[i + 2, 2] = guest.address
+    end
+    ws.save
+  end
+
   private
 
   def generate_token

@@ -58,3 +58,7 @@ gem 'faker'
 gem 'capybara' 
 gem 'guard-rspec' 
 gem 'launchy'
+
+gem "mocha", group: :test
+
+gem "google_drive"
