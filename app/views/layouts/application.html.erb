@@ -59,9 +59,9 @@
 
     <script>
       $('img#header').hover(function() {
-        $(this).attr('src', '/assets/header2.jpg');
+        $(this).attr('src', '<%= asset_path "header2.jpg" %>');
       }, function() {
-        $(this).attr('src', '/assets/header.jpg');
+        $(this).attr('src', '<%= asset_path "header.jpg" %>');
       });
     </script>
     
