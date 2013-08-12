@@ -22,13 +22,13 @@
   <body>
 
     <header>
-      <%= image_tag 'header.jpg', :style => 'width: 100%;', :id => 'header' %>
+      Jon and Joanne!
     </header>
 
     <div class="row">
       <div class="large-2 columns">
         <ul class='side-nav'>
-          <li <% if params[:controller] == 'pages' && params[:action] == 'landing' %>class="current"<% end %>><a href="/">Home</a></li>
+          <li <% if params[:controller] == 'pages' && params[:action] == 'home' %>class="current"<% end %>><a href="/home">Home</a></li>
           <li <% if params[:controller] == 'pages' && params[:action] == 'about_us' %>class="current"<% end %>><a href="/about-us">About Us</a></li>
           <li <% if params[:controller] == 'pages' && params[:action] == 'proposal' %>class="current"<% end %>><a href="/proposal">The Proposal</a></li>
           <li <% if params[:controller] == 'pages' && params[:action] == 'bridal_party' %>class="current"<% end %>><a href="/bridal-party">Bridal Party</a></li>

@@ -11,11 +11,13 @@
  *= require_self
  */
 
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,700|Enriqueta:400,700);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700|Enriqueta:400,700|Lobster);
 @font-face { font-family: 'Sail'; src: font-url('SailRegular.otf'); } 
 @font-face { font-family: 'Ostrich'; src: font-url('Ostrich.ttf'); } 
+@font-face { font-family: 'Ostrich Black'; src: font-url('OstrichBlack.ttf'); } 
 
-$primary-color: #81b4c6;
+$primary-color: #b7d0c9;
+$primary-color2: #5D7181;
 $secondary-color: #eed15d;
 
 @import "foundation_and_overrides.scss";
@@ -23,7 +25,12 @@ $secondary-color: #eed15d;
 
 body {
   background-color: #f6f6f6;
-  // background: image_url('farmer.png');
+  background: image_url('retina_wood.jpg');
+}
+
+button:hover, button:focus, .button:hover, .button:focus {
+  background-color: $primary-color2;
+  color: white;
 }
 
 .row.bottom-bordered {
@@ -33,7 +40,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Sail', sans-serif;
+  font-family: 'Lobster', sans-serif;
   font-weight: normal;
   line-height: 1em;
 }
@@ -55,11 +62,20 @@ p {
 }
 
 header {
-  padding: 0 0 20px;
-  img {
-    margin-bottom: 15px;
+  text-align: center;
+  padding: 20px 0;
+  margin: 40px 0;
+  background-color: $primary-color;
+  color: white;
+  font-weight: bold;
+  a {
+    color: white;
+    &:hover {
+      color: $secondary-color;
+    }
   }
 }
+
 
 ul.side-nav {
   padding-top: 0;
@@ -83,20 +99,40 @@ ul.side-nav {
   }
 }
 
+.landing {
+  a {
+    display: block;
+    position: relative;
+    img {
+    margin: 40px 0;
+      @include transition-property(opacity);
+      @include transition-duration(0.6s);
+      @include transition-timing-function(ease-in-out);
+      padding: 5px;
+      background-color: $primary-color;
+      position:absolute;
+      left:0;
+      &.top:hover {
+        opacity: 0;
+      }
+    }
+  }
+}
+
 .welcome {
-  background-color: white;
+  background-color: $primary-color;
   padding: 20px;
   font-size: 1.2em;
   margin-bottom: 30px;
   span.greeting {
-    font-family: 'Sail';
+    font-family: 'Lobster';
     font-size: 1.6em;
   }
 }
 
 .proposal {
   .byline {
-    color: $secondary-color;
+    color: $primary-color2;
     font-size: 0.5em;
   }
   .footnote {
@@ -129,15 +165,25 @@ ul.side-nav {
 }
 
 .bridal-party {
+  img {
+    margin-bottom: 10px;
+  }
   .name {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.4em;
+    font-family: 'Ostrich', sans-serif;
+    font-size: 1.6em;
+    line-height: 1em;
+    span {
+      // font-family: 'Ostrich Black'
+    }
   }
   li.main .name {
-    color: $primary-color;
+    // color: $primary-color;
   }
   .title {
     color: #999;
+  }
+  .title, .blurb {
+    font-size: 0.9em;
   }
   .officiant {
     text-align: center;
@@ -150,7 +196,6 @@ ul.side-nav {
     text-align: center;
   }
   .info {
-    font-size: 1.3em;
     margin-bottom: 10px;
     span {
       font-weight: bold;
