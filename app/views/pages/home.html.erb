@@ -34,55 +34,56 @@
       <h1>Give Us Your Address!</h1>
       <%= form_for @guest, :html => { :class => 'custom' } do |f| %>
         <div class="row">
-          <div class="large-6 columns">
-            <%= f.label :first_name %>
+          <div class="large-6 columns first_name">
+            <%= f.label :first_name, 'First Name*' %>
             <%= f.text_field :first_name %>
           </div>
-          <div class="large-6 columns">
-            <%= f.label :last_name %>
+          <div class="large-6 columns last_name">
+            <%= f.label :last_name, 'Last Name*' %>
             <%= f.text_field :last_name %>
           </div>
         </div>
         <div class="row">
-          <div class="large-12 columns">
-            <%= f.label :address1, 'Address 1' %>
+          <div class="large-12 columns address1">
+            <%= f.label :address1, 'Address 1*' %>
             <%= f.text_field :address1 %>
           </div>
         </div>
         <div class="row">
-          <div class="large-12 columns">
+          <div class="large-12 columns address2">
             <%= f.label :address2, 'Address 2' %>
             <%= f.text_field :address2 %>
           </div>
         </div>
         <div class="row">
-          <div class="large-6 columns">
-            <%= f.label :city %>
+          <div class="large-6 columns city">
+            <%= f.label :city, 'City*' %>
             <%= f.text_field :city %>
           </div>
-          <div class="large-6 columns">
-            <%= f.label :state %>
+          <div class="large-6 columns state">
+            <%= f.label :state, 'State*' %>
             <%= select_tag 'customSelect1', options_for_select(STATES) %>
 
           </div>
         </div>
         <div class="row">
-          <div class="large-6 columns">
-            <%= f.label :zipcode %>
+          <div class="large-6 columns zipcode">
+            <%= f.label :zipcode, 'Zipcode*' %>
             <%= f.text_field :zipcode %>
           </div>
-          <div class="large-6 columns">
-            <%= f.label :country %>
+          <div class="large-6 columns country">
+            <%= f.label :country, 'Country*' %>
             <%= f.text_field :country, :value => 'USA' %>
           </div>
         </div>
         <div class="row">
-          <div class="large-12 columns">
+          <div class="large-12 columns notes">
             <%= f.label :notes, 'Notes or Comments?' %>
             <%= f.text_area :notes, :style => 'height: 6em;' %>
           </div>
         </div>
         <%= submit_tag 'Submit', :class => 'button' %>
+        <p>* denotes required field</p>
       <% end %>
     </div>
 
@@ -93,14 +94,3 @@
   </div>
 
 </div>
-
-<% content_for(:javascript) do %>
-
-<script>
-  $(function() {
-    var weddingDay = new Date(2014, 0, 25);
-    $('#countdown').countdown({until: weddingDay});
-  });
-</script>
-
-<% end %>

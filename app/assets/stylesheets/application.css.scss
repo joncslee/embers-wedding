@@ -46,7 +46,7 @@ h1, h2, h3, h4 {
 }
 
 h1 { font-size: 2.4em; margin-top: 0; }
-h2 { font-size: 2em; }
+h2 { font-size: 1.6em; }
 
 
 p {
@@ -61,7 +61,7 @@ p {
   text-align: center;
 }
 
-header {
+header, footer {
   text-align: center;
   padding: 20px 0;
   margin: 40px 0;
@@ -127,6 +127,39 @@ ul.side-nav {
   span.greeting {
     font-family: 'Lobster';
     font-size: 1.6em;
+  }
+}
+
+form.custom {
+  p {
+    font-style: italic;
+    font-size: 0.9em;
+  }
+  .custom.dropdown.error {
+    background: rgba(198, 15, 19, 0.1);
+    border-color: #C60F13;
+  }
+}
+
+.about-us {
+  h2 {
+    margin: 40px 0 20px;
+  }
+  blockquote {
+    @include border-radius(10px);
+    background: white;
+    margin: 0 0 10px;
+    padding: 20px 20px 10px;
+    font-style: italic;
+    clear: both;
+    p {
+      margin: 0 0 15px 0;
+    }
+  }
+  p.byline {
+    font-style: italic;
+    float: right;
+    margin-bottom: 30px;
   }
 }
 
@@ -215,17 +248,3 @@ ul.side-nav {
   }
 }
 
-footer {
-  text-align: center;
-  padding: 20px 0;
-  margin: 20px 0;
-  background-color: $primary-color;
-  color: white;
-  font-weight: bold;
-  a {
-    color: white;
-    &:hover {
-      color: $secondary-color;
-    }
-  }
-}
