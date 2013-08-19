@@ -1,22 +1,32 @@
 <div class="about-us">
 
-  <div class="row bottom-bordered">
+  <div class="row bottom-bordered him-her">
     <div class="large-6 columns">
-      <h2>Her</h2>
-      <p>This is some stuff about Joanne! Blah blah blah :)</p>
+      <h1>Him</h1>
+      <%= image_tag 'jon.jpg' %>
+      <p>An only child, Jon spent his formative years on the other side of the world, where he rode elephants in Thailand, hunted geese in New Zealand, and toured with his ska band around Singapore. Since moving to Boston at age 18, he has been attempting to recover from those experiences, with varying degrees of success. Despite being a one-man band and a self-taught web developer, Jon is extremely self-deprecating and clearly did not write this blurb.</p>
     </div>
     <div class="large-6 columns">
-      <h2>Him</h2>
-      <p>And here is some stuff about Jon! I am a boy!</p>
+      <h1>Her</h1>
+      <%= image_tag 'joanne.jpg' %>
+      <p>After a one-year stint in Pennsylvania, Joanne headed south, where she grew up in the great state of Texas, land of fried butter, pizza buffets, and enormous strip malls. After years of playing the violin and excelling at her academic studies, she ended up at MIT for college, thus fulfilling all the stereotypes one would expect of her. Joanne is currently mastering the art of planning a wedding while keeping an impending quarter-life crisis at bay.</p>
     </div>
   </div>
 
   <h1>How We Met</h1>
 
-  <p>Jon and Joanne met in church when Jon listened to Joanne audition (read: forget all the lyrics of every song) for their worship team. Over the next two years, they made lots of music, drank lots of wine (empty bottles = free centerpieces), and, somewhere along the way, decided to spend the rest of their lives together.</p>
+  <div class="row bottom-bordered">
+    <div class="large-6 columns">
+      <p>Jon and Joanne's first substantial interaction was at <a href="http://www.highrock.org" target="_blank">Highrock Church</a> when Jon listened to Joanne audition for their worship team. Despite forgetting the lyrics to every song she attempted to audition with, Joanne made the team, and soon they were inseparable, to the chagrin* of all. One thing led to another and soon they were living across the street from each other. Eventually, Pastor Eugene was the one to tell them that what they were doing was indeed "dating" (which is why neither of them know exactly when their relationship started). Over the next two years, they made lots of music, drank lots of wine (empty bottles = free centerpieces), and, somewhere along the way, decided to spend the rest of their lives together.</p>
+      <p class="footnote">* for reasons that we won't get into right now...</p>
+    </div>
+    <div class="large-6 columns">
+      <%= image_tag 'music.jpg' %>
+    </div>
+  </div>
 
-  <h2>What The Critics Are Saying</h2>
-  <div class="row">
+  <h2 class="critics">What The Critics Are Saying</h2>
+  <div class="row bottom-bordered">
     <div class="large-6 columns">
       <blockquote>
         <p>"A typical kdrama but [...] no one gets sick or dies or needs an organ transplant of whatever sort to cure X cancer"</p>
@@ -51,6 +61,10 @@
       <p class="byline">- the best man's wife</p>
     </div>
   </div>
+
+  <% if false %>
+  <h1>Some Of Our Favorite Photos</h1>
+  <% end %>
 
 </div>
 

@@ -74,16 +74,3 @@
   </div>
 </div>
 
-<% content_for(:javascript) do %>
-<script>
-  function showLong() {
-    $('#short-story').hide();
-    $('#long-story').show();
-  }
-  function showShort() {
-    $('#short-story').show();
-    $('#long-story').hide();
-    window.location = '#proposal';
-  }
-</script>
-<% end %>

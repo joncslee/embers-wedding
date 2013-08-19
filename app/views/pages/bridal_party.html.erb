@@ -1,27 +1,30 @@
 <div class="bridal-party">
-
+  <% if false %>
+    <h2>The Bridal Party</h2>
+    <p>Coming soon!</p>
+  <% else %>
   <h2>Ladies First!</h2>
   <ul class="large-block-grid-4">
     <li class="main">
-      <img src="http://placehold.it/300x300" />
+      <%= image_tag 'party/jihye.jpg' %>
       <div class="name">Jihye <span>Kim</span></div>
       <div class="title">Maid of Honor</div>
-      <p class="blurb">She's cool</p>
+      <p class="blurb">Medical student and researcher by day, heartbreaker by night</p>
     </li>
     <li>
-      <img src="http://placehold.it/300x300" />
+      <%= image_tag 'party/jeska.jpg' %>
       <div class="name">Jessica Cheng</div>
       <div class="title">Bridesmaid</div>
       <p class="blurb">She's cool too!</p>
     </li>
     <li>
-      <img src="http://placehold.it/300x300" />
+      <%= image_tag 'party/shinetin.jpg' %>
       <div class="name">Shinetin Tzeng</div>
       <div class="title">Bridesmaid</div>
-      <p class="blurb">She's cool too!</p>
+      <p class="blurb">Secretly married to Jay Chou, despite what her "maid" status may imply</p>
     </li>
     <li>
-      <img src="http://placehold.it/300x300" />
+      <%= image_tag 'party/yeona.jpg' %>
       <div class="name">Yeona Chun</div>
       <div class="title">Bridesmaid</div>
       <p class="blurb">She's cool too!</p>
@@ -31,37 +34,38 @@
   <h2>Men Second</h2>
   <ul class="large-block-grid-4">
     <li class="main">
-      <img src="http://placehold.it/300x300" />
+      <%= image_tag 'party/mike.jpg' %>
       <div class="name">Michael Chen</div>
-      <div class="title">Best man</div>
-      <p class="blurb">He's cool</p>
+      <div class="title">Best Man</div>
+      <p class="blurb">Keyboard, guitar, drums, vox</p>
     </li>
     <li>
-      <img src="http://placehold.it/300x300" />
+      <%= image_tag 'party/craig.jpg' %>
       <div class="name">Craig Wen</div>
       <div class="title">Groomsman</div>
-      <p class="blurb">He's cool too!</p>
+      <p class="blurb">Electric guitar</p>
     </li>
     <li>
-      <img src="http://placehold.it/300x300" />
+      <%= image_tag 'party/sam.jpg' %>
       <div class="name">Samuel Lee</div>
       <div class="title">Groomsman</div>
-      <p class="blurb">He's cool too!</p>
+      <p class="blurb">Bass, guitar, vox</p>
     </li>
     <li>
-      <img src="http://placehold.it/300x300" />
+      <%= image_tag 'party/jeremy.jpg' %>
       <div class="name">Jeremy Shih</div>
       <div class="title">Groomsman</div>
-      <p class="blurb">He's cool too!</p>
+      <p class="blurb">Cello</p>
     </li>
   </ul>
 
   <div class="officiant">
     <h2>The Man of the Hour!</h2>
-    <img src="http://placehold.it/300x300" />
+      <%= image_tag 'party/eugene.jpg' %>
     <div class="name">Eugene Kim</div>
     <div class="title">Officiant</div>
     <p class="blurb">He's a ninja!</p>
   </div>
+  <% end %>
 
 </div>

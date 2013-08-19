@@ -11,7 +11,7 @@
  *= require_self
  */
 
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,700|Enriqueta:400,700|Lobster);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700|Enriqueta:400,700|Lobster|Imprima);
 @font-face { font-family: 'Sail'; src: font-url('SailRegular.otf'); } 
 @font-face { font-family: 'Ostrich'; src: font-url('Ostrich.ttf'); } 
 @font-face { font-family: 'Ostrich Black'; src: font-url('OstrichBlack.ttf'); } 
@@ -22,6 +22,7 @@ $secondary-color: #eed15d;
 
 @import "foundation_and_overrides.scss";
 @import 'compass';
+
 
 body {
   background-color: #f6f6f6;
@@ -53,6 +54,9 @@ p {
   line-height: 1.2em;
 }
 
+.row img {
+}
+
 .subtitle {
   font-size: 0.9em;
   margin-top: 5px;
@@ -61,13 +65,18 @@ p {
   text-align: center;
 }
 
-header, footer {
+header {
+  margin-bottom: 20px;
+}
+
+footer {
+  font-family: 'Lobster', sans-serif;
+  font-size: 1.2em;
   text-align: center;
   padding: 20px 0;
   margin: 40px 0;
   background-color: $primary-color;
   color: white;
-  font-weight: bold;
   a {
     color: white;
     &:hover {
@@ -104,7 +113,7 @@ ul.side-nav {
     display: block;
     position: relative;
     img {
-    margin: 40px 0;
+      margin: 40px 0;
       @include transition-property(opacity);
       @include transition-duration(0.6s);
       @include transition-timing-function(ease-in-out);
@@ -119,18 +128,36 @@ ul.side-nav {
   }
 }
 
+.home {
+  iframe {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
 .welcome {
   background-color: $primary-color;
   padding: 20px;
   font-size: 1.2em;
   margin-bottom: 30px;
-  span.greeting {
+  div.greeting {
     font-family: 'Lobster';
     font-size: 1.6em;
+    margin-bottom: 10px;
+  }
+  div.message {
+    // font-size: 2em;
   }
 }
 
 form.custom {
+  .not_coming {
+    margin-bottom: 20px;
+    label {
+      margin-bottom: 8px;
+      // font-weight: bold;
+    }
+  }
   p {
     font-style: italic;
     font-size: 0.9em;
@@ -142,25 +169,47 @@ form.custom {
 }
 
 .about-us {
-  h2 {
+  .him-her {
+    text-align: center;
+    img {
+      width: 60%;
+      margin-bottom: 15px;
+    }
+    p {
+      text-align: left;
+      font-size: 0.9em;
+    }
+  }
+  h2.critics {
     margin: 40px 0 20px;
   }
   blockquote {
-    @include border-radius(10px);
-    background: white;
+    background-color: lighten($primary-color, 15%);
     margin: 0 0 10px;
-    padding: 20px 20px 10px;
+    padding: 15px 15px 5px;
     font-style: italic;
     clear: both;
+    font-size: 0.9em;
+    margin-bottom: 0;
     p {
-      margin: 0 0 15px 0;
+      margin: 0 0 10px 0;
+      line-height: 1.1em;
     }
   }
   p.byline {
+    padding: 10px 0;
     font-style: italic;
     float: right;
     margin-bottom: 30px;
+    display: block;
+    font-size: 0.9em;
   }
+}
+
+.footnote {
+  font-style: italic;
+  color: #777;
+  font-size: 0.9em;
 }
 
 .proposal {
@@ -168,21 +217,21 @@ form.custom {
     color: $primary-color2;
     font-size: 0.5em;
   }
-  .footnote {
-    font-style: italic;
-    color: #777;
-    font-size: 0.9em;
-  }
   .photos {
+    width: 100%;
     text-align: center;
     clear: both;
+    img {
+      width: 100%;
+    }
   }
 }
 
 #countdown {
   font-style: normal;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Ostrich', sans-serif;
   text-align: center;
+  font-size: 1.4em;
 
   .countdown_section {
     display: block;
@@ -192,8 +241,8 @@ form.custom {
   }
 
   .countdown_amount {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.4em;
+    font-family: 'Ostrich', sans-serif;
+    font-size: 1.8em;
   }
 }
 
@@ -213,10 +262,13 @@ form.custom {
     // color: $primary-color;
   }
   .title {
-    color: #999;
+    color: $primary-color2;
   }
-  .title, .blurb {
+  .title {
     font-size: 0.9em;
+  }
+  .blurb {
+    font-size: 0.8em;
   }
   .officiant {
     text-align: center;
@@ -225,8 +277,12 @@ form.custom {
 }
 
 .wedding-details {
+  text-align: center;
   h1, h2 {
     text-align: center;
+  }
+  img {
+    margin-bottom: 20px;
   }
   .info {
     margin-bottom: 10px;
@@ -244,6 +300,15 @@ form.custom {
       font-size: 1.2em;
       font-weight: bold;
       margin-bottom: 5px;
+    }
+  }
+}
+
+.things {
+  h1 {
+    span {
+      text-decoration: line-through;
+      color: #999;
     }
   }
 }
