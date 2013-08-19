@@ -22,9 +22,6 @@ class Guest < ActiveRecord::Base
   end
 
   def self.export_to_google_doc
-    require "rubygems"
-    require "google_drive"
-
     username = ENV['WEDDING_DOC_USERNAME']
     password = ENV['WEDDING_DOC_PASSWORD']
     session = GoogleDrive.login(username, password)

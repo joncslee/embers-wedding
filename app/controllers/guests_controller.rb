@@ -43,26 +43,7 @@ class GuestsController < ApplicationController
   end
 
   def export
-    require "google_drive"
-
-    username = ENV['WEDDING_DOC_USERNAME']
-    password = ENV['WEDDING_DOC_PASSWORD']
-    session = GoogleDrive.login(username, password)
-
-    ws = session.spreadsheet_by_key("0As1QuI50fA28dEdDaWRNeHV3bjNRTy1CT2h0aVBNU3c").worksheets[7]
-
-    ws[1, 1] = 'Name'
-    ws[1, 2] = 'Address'
-    ws[1, 3] = 'Coming?'
-    ws[1, 4] = 'Notes'
-    Guest.all.each_with_index do |guest, i|
-      ws[i + 2, 1] = guest.name
-      ws[i + 2, 2] = guest.address
-      ws[i + 2, 3] = guest.not_coming? ? 'No' : 'Yes'
-      ws[i + 2, 4] = guest.notes
-    end
-    ws.save
-
+    Guest.export_to_google_doc
     redirect_to guests_url
   end
 
