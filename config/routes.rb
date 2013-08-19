@@ -5,6 +5,7 @@ EmbersWedding::Application.routes.draw do
   # root 'pages#landing'
   root 'pages#landing'
 
+  get 'save-the-date' => 'pages#save_the_date'
   get 'home' => 'pages#home'
   get 'about-us' => 'pages#about_us'
   get 'proposal' => 'pages#proposal'

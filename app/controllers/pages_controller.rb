@@ -3,8 +3,11 @@ class PagesController < ApplicationController
     render :layout => 'landing'
   end
 
-  def home
+  def save_the_date
     @guest = Guest.new
+  end
+
+  def home
   end
 
   def about_us

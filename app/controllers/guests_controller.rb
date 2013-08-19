@@ -1,4 +1,7 @@
 class GuestsController < ApplicationController
+  
+  http_basic_authenticate_with name: "embers", password: "beconstructive", :except => :create
+
   def index
     @guests = Guest.all
   end
@@ -14,7 +17,7 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(guest_params)
     if @guest.save
-      redirect_to root_url, :notice => "Successfully created guest."
+      redirect_to '/home' , :notice => "Successfully created guest."
     else
       render :action => 'new'
     end
@@ -47,6 +50,6 @@ class GuestsController < ApplicationController
   private
 
   def guest_params
-    params.require(:guest).permit(:first_name, :last_name, :address1, :address2, :city, :state, :zipcode, :country, :notes)
+    params.require(:guest).permit(:first_name, :last_name, :address1, :address2, :city, :state, :zipcode, :country, :notes, :not_coming)
   end
 end

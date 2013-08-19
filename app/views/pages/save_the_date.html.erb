@@ -1,0 +1,75 @@
+<div class="home">
+
+  <h1>Leave Us Your Address, Please</h1>
+  <p>...so that we can send you a formal invitation!</p>
+  <%= form_for @guest, :html => { :class => 'custom' } do |f| %>
+    <div class="row">
+      <div class="large-12 columns not_coming">
+        <label>Immediate Thoughts?</label>
+        <label for="guest_not_coming_false"><input name="guest[not_coming]" type="radio" id="guest_not_coming_false" value="false" style="display:none;" CHECKED><span class="custom radio checked"></span> Yes / Maybe I will brave a potential blizzard to see you two get married!</label>
+        <label for="guest_not_coming_true"><input name="guest[not_coming]" type="radio" id="guest_not_coming_true" value="true" style="display:none;"><span class="custom radio"></span>  No, January in Boston is unthinkable, sorry! (and any other legitimate reason for not attending)</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <div class="row">
+          <div class="large-6 columns first_name">
+            <%= f.label :first_name, 'First Name*' %>
+            <%= f.text_field :first_name %>
+          </div>
+          <div class="large-6 columns last_name">
+            <%= f.label :last_name, 'Last Name*' %>
+            <%= f.text_field :last_name %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns address1">
+            <%= f.label :address1, 'Address 1*' %>
+            <%= f.text_field :address1 %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns address2">
+            <%= f.label :address2, 'Address 2' %>
+            <%= f.text_field :address2 %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns city">
+            <%= f.label :city, 'City*' %>
+            <%= f.text_field :city %>
+          </div>
+          <div class="large-6 columns state">
+            <%= f.label :state, 'State*' %>
+            <%= f.select :state, options_for_select(STATES) %>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns zipcode">
+            <%= f.label :zipcode, 'Zipcode*' %>
+            <%= f.text_field :zipcode %>
+          </div>
+          <div class="large-6 columns country">
+            <%= f.label :country, 'Country*' %>
+            <%= f.text_field :country, :value => 'USA' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns notes">
+            <%= f.label :notes, 'Notes or Comments?' %>
+            <%= f.text_area :notes, :style => 'height: 6em;' %>
+          </div>
+        </div>
+        <%= submit_tag 'Submit', :class => 'button' %>
+        <p>* denotes required field</p>
+      </div>
+
+      <div class="large-6 columns">
+        <%= image_tag 'photobooth.jpg' %>
+        <div class="subtitle">This is what we do at weddings!</div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
