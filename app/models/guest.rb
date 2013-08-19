@@ -17,6 +17,10 @@ class Guest < ActiveRecord::Base
     a
   end
 
+  def not_coming?
+    not_coming
+  end
+
   def self.export_to_google_doc
     username = ENV['WEDDING_DOC_USERNAME']
     password = ENV['WEDDING_DOC_PASSWORD']
@@ -26,9 +30,13 @@ class Guest < ActiveRecord::Base
 
     ws[1, 1] = 'Name'
     ws[1, 2] = 'Address'
+    ws[1, 3] = 'Coming?'
+    ws[1, 4] = 'Notes'
     self.all.each_with_index do |guest, i|
       ws[i + 2, 1] = guest.name
       ws[i + 2, 2] = guest.address
+      ws[i + 2, 3] = guest.not_coming? ? 'No' : 'Yes'
+      ws[i + 2, 4] = guest.notes
     end
     ws.save
   end
