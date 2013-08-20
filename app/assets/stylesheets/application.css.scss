@@ -160,7 +160,7 @@ ul.side-nav {
   }
 }
 
-form.custom {
+form.guest {
   .not_coming {
     margin-bottom: 20px;
     label {
@@ -172,7 +172,10 @@ form.custom {
     font-style: italic;
     font-size: 0.9em;
   }
-  .custom.dropdown.error {
+  .zipcode {
+    clear: both;
+  }
+  .dropdown.error {
     background: rgba(198, 15, 19, 0.1);
     border-color: #C60F13;
   }

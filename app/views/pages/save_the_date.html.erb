@@ -2,12 +2,12 @@
 
   <h1>Leave Us Your Address, Please</h1>
   <p>...so that we can send you a formal invitation!</p>
-  <%= form_for @guest, :html => { :class => 'custom' } do |f| %>
+  <%= form_for @guest, :html => { :class => 'guest' } do |f| %>
     <div class="row">
       <div class="large-12 columns not_coming">
         <label>Immediate Thoughts?</label>
-        <label for="guest_not_coming_false"><input name="guest[not_coming]" type="radio" id="guest_not_coming_false" value="false" style="display:none;" CHECKED><span class="custom radio checked"></span> Yes / Maybe I will brave a potential blizzard to see you two get married!</label>
-        <label for="guest_not_coming_true"><input name="guest[not_coming]" type="radio" id="guest_not_coming_true" value="true" style="display:none;"><span class="custom radio"></span>  No, January in Boston is unthinkable, sorry! (and any other legitimate reason for not attending)</label>
+        <label for="guest_not_coming_false"><input name="guest[not_coming]" type="radio" id="guest_not_coming_false" value="false" CHECKED> Yes / Maybe I will brave a potential blizzard to see you two get married!</label>
+        <label for="guest_not_coming_true"><input name="guest[not_coming]" type="radio" id="guest_not_coming_true" value="true">  No, January in Boston is unthinkable, sorry! (and any other legitimate reason for not attending)</label>
       </div>
     </div>
     <div class="row">
