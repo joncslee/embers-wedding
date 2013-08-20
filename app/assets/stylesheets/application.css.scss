@@ -287,6 +287,10 @@ form.guest {
   }
   .blurb {
     font-size: 0.8em;
+    span {
+      font-style: italic;
+      display:block;
+    }
   }
   .officiant {
     text-align: center;
