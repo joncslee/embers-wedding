@@ -218,11 +218,16 @@ form.custom {
     font-size: 0.5em;
   }
   .photos {
-    width: 100%;
     text-align: center;
     clear: both;
     img {
-      width: 100%;
+    }
+    p {
+      font-size: 1.2em;
+      text-align: left;
+    }
+    span {
+      font-weight: bold;
     }
   }
 }
