@@ -49,6 +49,16 @@ h1, h2, h3, h4 {
 h1 { font-size: 2.4em; margin-top: 0; }
 h2 { font-size: 1.6em; }
 
+.notice {
+  padding: 15px;
+  text-align: center;
+  font-size: 1.1em;
+  border: 2px solid darken($secondary-color, 20%);
+  background-color: lighten($secondary-color, 25%);
+  color: darken($secondary-color, 20%);
+  margin-bottom: 20px;
+}
+
 
 p {
   line-height: 1.2em;

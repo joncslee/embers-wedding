@@ -32,7 +32,6 @@ validateForm = ->
   last_name = $('input#guest_last_name').val()
   address1 = $('input#guest_address1').val()
   city = $('input#guest_city').val()
-  state = $('select#guest_state').val()
   zipcode = $('input#guest_zipcode').val()
   country = $('input#guest_country').val()
 
@@ -47,10 +46,6 @@ validateForm = ->
     hasErrors = true
   if city == ''
     $('div.city').addClass 'error'
-    hasErrors = true
-  if !state?
-    $('div.state').addClass 'error'
-    $('div.state .custom.dropdown').addClass 'error'
     hasErrors = true
   if zipcode == ''
     $('div.zipcode').addClass 'error'

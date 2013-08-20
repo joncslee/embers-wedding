@@ -17,7 +17,7 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(guest_params)
     if @guest.save
-      redirect_to '/home' , :notice => "Successfully created guest."
+      redirect_to '/home' , :notice => true
     else
       render :action => 'new'
     end

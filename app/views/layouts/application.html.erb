@@ -42,6 +42,12 @@
       </div>
 
       <div class="large-10 columns">
+
+        <% if flash[:notice] %>
+          <div class="notice">
+            Thanks for your response, now go explore our site!
+          </div>
+        <% end %>
         <%= yield %>
       </div>
     </div>
