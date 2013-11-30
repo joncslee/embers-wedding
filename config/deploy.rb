@@ -53,6 +53,7 @@ namespace :deploy do
   before "deploy", "deploy:check_revision"
 
   desc "Invoke rake task"
+  # cap deploy:invoke task=db:seed
   task :invoke do
     run "cd '#{current_path}' && #{rake} #{ENV['task']} RAILS_ENV=#{rails_env}"
   end

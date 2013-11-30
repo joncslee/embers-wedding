@@ -3,19 +3,26 @@
   <tr>
     <th>Token</th>
     <th>Name</th>
-    <th>Confirmed?</th>
+    <th>Coming?</th>
+    <th>Dietary Restrictions</th>
+    <th>Hotel?</th>
+    <th>Comments</th>
   </tr>
   <% @invitations.each do |i| %>
     <tr>
       <td><%= i.token %></td>
       <td></td>
       <td></td>
+      <td></td>
+      <td><%= i.hotel %></td>
+      <td><%= i.comments %></td>
     </tr>
     <% i.guests.each do |g| %>
       <tr>
         <td></td>
         <td><%= g.first_name %> <%= g.last_name %></td>
         <td><%= g.confirmation %></td>
+        <td><%= g.dietary_restrictions %></td>
       </tr>
     <% end %>
   <% end %>
