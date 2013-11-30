@@ -26,3 +26,8 @@ task :guest_import => :environment do
     end
   end
 end
+
+task :clear_guests_and_invitations => :environment do
+  Invitation.delete_all
+  Guest.delete_all
+end
