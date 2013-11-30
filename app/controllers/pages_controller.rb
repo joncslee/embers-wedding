@@ -33,7 +33,7 @@ class PagesController < ApplicationController
 
   def rsvp_confirm
     token = params[:last_name] + params[:zipcode]
-    @invitation = Invitation.find_by_token(token)
+    @invitation = Invitation.find_by_token(token.downcase)
     if @invitation.blank?
       redirect_to '/rsvp', :alert => "Couldn't find your invitation record, try again!"
     else
