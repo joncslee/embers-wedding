@@ -20,7 +20,7 @@
     <% i.guests.each do |g| %>
       <tr>
         <td></td>
-        <td><%= g.first_name %> <%= g.last_name %></td>
+        <td><%= link_to "#{g.first_name} #{g.last_name}", g %></td>
         <td><%= g.confirmation %></td>
         <td><%= g.dietary_restrictions %></td>
       </tr>
