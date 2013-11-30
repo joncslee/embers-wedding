@@ -3,7 +3,7 @@ class GuestsController < ApplicationController
   http_basic_authenticate_with name: "embers", password: "beconstructive", :except => :create
 
   def index
-    @guests = Guest.all
+    @invitations = Invitation.all
   end
 
   def show
@@ -50,6 +50,6 @@ class GuestsController < ApplicationController
   private
 
   def guest_params
-    params.require(:guest).permit(:first_name, :last_name, :address1, :address2, :city, :state, :zipcode, :country, :notes, :not_coming)
+    params.require(:guest).permit(:first_name, :last_name, :address1, :address2, :city, :state, :zipcode, :country, :notes, :not_coming, :confirmation, :dietary_restrictions)
   end
 end

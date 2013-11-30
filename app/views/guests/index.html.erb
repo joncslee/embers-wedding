@@ -1,18 +1,25 @@
 
 <table>
   <tr>
+    <th>Token</th>
     <th>Name</th>
+    <th>Confirmed?</th>
   </tr>
-  <% for guest in @guests %>
+  <% @invitations.each do |i| %>
     <tr>
-      <td><%= guest.name %></td>
-      <td><%= link_to "Show", guest %></td>
-      <td><%= link_to "Edit", edit_guest_path(guest) %></td>
-      <td><%= link_to "Destroy", guest, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= i.token %></td>
+      <td></td>
+      <td></td>
     </tr>
+    <% i.guests.each do |g| %>
+      <tr>
+        <td></td>
+        <td><%= g.first_name %> <%= g.last_name %></td>
+        <td><%= g.confirmation %></td>
+      </tr>
+    <% end %>
   <% end %>
 </table>
 
 <p><%= link_to "New Guest", new_guest_path %></p>
 
-<p><%= link_to "Export to Google Doc", "/export-guests" %>

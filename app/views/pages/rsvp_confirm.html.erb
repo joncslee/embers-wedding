@@ -1,0 +1,54 @@
+<div id="rsvp_confirm">
+  <h1>Howdy, <%= @guests.reject { |g| g.first_name.blank? }.map { |g| g.first_name }.to_sentence %></h1>
+
+  <div class="row">
+    <div class="large-6 columns">
+      <%= form_for @invitation do |f| %>
+
+        <div class="guests">
+          <%= f.fields_for :guests do |builder| %>
+            <% plus_one = true if builder.object.first_name.blank? %>
+
+            <% if plus_one %>
+              <p>Will an additional guest be attending?</p>
+            <% else %>
+              <p>Will <%= builder.object.first_name %> <%= builder.object.last_name %> be attending?</p>
+            <% end %>
+
+            <div class="radios <%= "plus-one" if plus_one %>">
+              <%= builder.radio_button :confirmation, true %><label>Yeah!</label><br />
+              <%= builder.radio_button :confirmation, false %><label>No :(</label>
+            </div>
+
+            <% if plus_one %>
+              <div class="row guest-name" style="display: none;">
+                <div class="large-6 columns">
+                  <%= builder.label :first_name, "Guest's First Name" %>
+                  <%= builder.text_field :first_name %>
+                </div>
+                <div class="large-6 columns">
+                  <%= builder.label :last_name, "Guest's Last Name" %>
+                  <%= builder.text_field :last_name %>
+                </div>
+              </div>
+            <% end %>
+
+            <%= builder.label :dietary_restrictions, "Any Dietary Restrictions?" %>
+            <%= builder.text_area :dietary_restrictions %>
+          <% end %>
+        </div>
+
+        <%= f.label :hotel, "Do you plan on staying in a hotel?" %>
+        <div class="radios">
+          <%= f.radio_button :hotel, true %><label>Yes</label><br />
+          <%= f.radio_button :hotel, false %><label>No</label>
+        </div>
+
+        <%= f.label :comments %>
+        <%= f.text_area :comments %>
+
+        <%= submit_tag 'Submit', :class => 'button' %>
+      <% end %>
+    </div>
+  </div>
+</div>

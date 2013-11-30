@@ -1,6 +1,7 @@
 class Guest < ActiveRecord::Base
-  validates_presence_of :first_name
-  validates_presence_of :last_name
+  belongs_to :invitation
+  # validates_presence_of :first_name
+  # validates_presence_of :last_name
   validates_presence_of :token
 
   before_validation :generate_token

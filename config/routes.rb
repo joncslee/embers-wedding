@@ -13,7 +13,7 @@ EmbersWedding::Application.routes.draw do
   get 'wedding-details' => 'pages#wedding_details'
   get 'hotel-info' => 'pages#hotel_info'
   get 'rsvp' => 'pages#rsvp'
-  get 'rsvp-confirm' => 'pages#rsvp'
+  get 'rsvp-confirm' => 'pages#rsvp_confirm'
   post 'rsvp-confirm' => 'pages#rsvp_confirm'
   get 'registry' => 'pages#registry'
   get 'things-to-do' => 'pages#things_to_do'

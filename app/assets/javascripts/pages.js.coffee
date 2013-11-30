@@ -55,3 +55,9 @@ validateForm = ->
     hasErrors = true
 
   !hasErrors
+
+$('.plus-one input[value="true"]').click ->
+  $('.row.guest-name').show('slow')
+
+$('.plus-one input[value="false"]').click ->
+  $('.row.guest-name').hide('slow')

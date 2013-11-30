@@ -1,3 +1,36 @@
 <h1>RSVP</h1>
 
-<p>Hold your horses, eager beavers! We're still building this page!</p>
+<p>Here to RSVP?  Awesome.</p>
+
+<p>Simply type in the last name (surname)* on the invitation and your zip code!</p>
+
+<p class="footnote">* If there are multiple people listed on your invitation, use the first person's last name. You will be able to RSVP for all people on the invitation.</p>
+
+
+<%= form_tag '/rsvp-confirm' do %>
+  <div class="row">
+    <div class="large-6 columns">
+
+      <% if flash[:alert] %>
+        <div class="alert"><%= flash[:alert] %></div>
+      <% end %>
+
+      <div class="row">
+        <div class="large-6 columns">
+          <%= label_tag :last_name, 'Last Name' %>
+          <%= text_field_tag :last_name %>
+        </div>
+        <div class="large-6 columns">
+          <%= label_tag :zipcode, 'Zip Code' %>
+          <%= text_field_tag :zipcode %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-2 columns">
+          <%= submit_tag 'RSVP!', :class => 'button' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
