@@ -22,6 +22,9 @@ class PagesController < ApplicationController
   def wedding_details
   end
 
+  def hotel_info
+  end
+
   def music
   end
 

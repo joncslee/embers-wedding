@@ -36,8 +36,9 @@
           <li <% if params[:controller] == 'pages' && params[:action] == 'proposal' %>class="current"<% end %>><a href="/proposal">The Proposal</a></li>
           <li <% if params[:controller] == 'pages' && params[:action] == 'bridal_party' %>class="current"<% end %>><a href="/bridal-party">Bridal Party</a></li>
           <li <% if params[:controller] == 'pages' && params[:action] == 'wedding_details' %>class="current"<% end %>><a href="/wedding-details">Wedding Details</a></li>
+          <li <% if params[:controller] == 'pages' && params[:action] == 'hotel_info' %>class="current"<% end %>><a href="/hotel-info">Hotel Info</a></li>
           <li <% if params[:controller] == 'pages' && params[:action] == 'things_to_do' %>class="current"<% end %>><a href="/things-to-do">Things To Do</a></li>
-          <li <% if params[:controller] == 'pages' && params[:action] == 'rsvp' %>class="current"<% end %>><a href="/rsvp">RSVP</a></li>
+          <li <% if params[:controller] == 'pages' && params[:action] =~ /^rsvp/ %>class="current"<% end %>><a href="/rsvp">RSVP</a></li>
           <li <% if params[:controller] == 'pages' && params[:action] == 'registry' %>class="current"<% end %>><a href="/registry">Registry</a></li>
         </ul>
       </div>
@@ -46,7 +47,7 @@
 
         <% if flash[:notice] %>
           <div class="notice">
-            Thanks for your response, now go explore our site!
+            <%= flash[:notice] %>
           </div>
         <% end %>
         <%= yield %>

@@ -11,13 +11,17 @@ EmbersWedding::Application.routes.draw do
   get 'proposal' => 'pages#proposal'
   get 'bridal-party' => 'pages#bridal_party'
   get 'wedding-details' => 'pages#wedding_details'
+  get 'hotel-info' => 'pages#hotel_info'
   get 'rsvp' => 'pages#rsvp'
+  get 'rsvp-confirm' => 'pages#rsvp'
+  post 'rsvp-confirm' => 'pages#rsvp_confirm'
   get 'registry' => 'pages#registry'
   get 'things-to-do' => 'pages#things_to_do'
   
   get 'export-guests' => 'guests#export'
 
   resources :guests
+  resources :invitations
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

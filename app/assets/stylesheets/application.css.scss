@@ -49,7 +49,7 @@ h1, h2, h3, h4 {
 h1 { font-size: 2.4em; margin-top: 0; }
 h2 { font-size: 1.6em; }
 
-.notice {
+.notice, .alert {
   padding: 15px;
   text-align: center;
   font-size: 1.1em;
@@ -58,7 +58,6 @@ h2 { font-size: 1.6em; }
   color: darken($secondary-color, 20%);
   margin-bottom: 20px;
 }
-
 
 p {
   line-height: 1.2em;
@@ -281,8 +280,6 @@ form.guest {
   }
   .title {
     color: $primary-color2;
-  }
-  .title {
     font-size: 0.9em;
   }
   .blurb {
@@ -302,30 +299,51 @@ form.guest {
 }
 
 .wedding-details {
-  text-align: center;
-  h1, h2 {
-    text-align: center;
-  }
   img {
     margin-bottom: 20px;
   }
-  .info {
+}
+
+.info {
+  margin-bottom: 10px;
+  &.heading {
+    font-size: 35px;
+    font-family: 'Ostrich';
+  }
+  &.bordered {
+    border-bottom: 1px dashed #999;
+    padding-bottom: 10px;
+  }
+}
+
+.directions {
+  p.heading {
+    font-weight: bold;
     margin-bottom: 10px;
-    span {
-      font-weight: bold;
+    color: white;
+    padding: 5px;
+    &.green {
+      background-color: #008150;
+    }
+    &.red {
+      background-color: #fa2d27;
+    }
+
+  }
+  ul {
+    margin-left: 15px;
+    li {
+      font-size: 14px;
     }
   }
-  .event {
-    padding-bottom: 10px;
-    .time {
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-    .name {
-      font-size: 1.2em;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
+}
+
+.parking {
+  .info {
+    font-size: 14px;
+  }
+  .info.heading {
+    font-size: 30px;
   }
 }
 
@@ -338,3 +356,39 @@ form.guest {
   }
 }
 
+
+#rsvp_confirm {
+  .guests {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: #999 1px dashed;
+    p {
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
+
+  .radios {
+    margin-bottom: 10px;
+    label {
+      display: inline;
+    }
+  }
+}
+
+.registry {
+  a {
+    display: block;
+    text-align: center;
+    img {
+      margin: 15px 0;
+      &#ws {
+        width: 400px;
+      }
+      &#cb {
+        width: 300px;
+      }
+    }
+  }
+}
