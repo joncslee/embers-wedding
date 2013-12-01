@@ -16,8 +16,8 @@
             <% end %>
 
             <div class="radios <%= "plus-one" if plus_one %>">
-              <%= builder.radio_button :confirmation, true %><label>Yeah!</label><br />
-              <%= builder.radio_button :confirmation, false %><label>No :(</label>
+              <%= builder.radio_button :confirmation, true %><label>Yes, with pleasure!</label><br />
+              <%= builder.radio_button :confirmation, false %><label>No, with regret</label>
             </div>
 
             <% if plus_one %>
@@ -44,10 +44,15 @@
           <%= f.radio_button :hotel, false %><label>No</label>
         </div>
 
-        <%= f.label :comments %>
+        <%= f.label :comments, "Comments (music requests, etc)" %>
         <%= f.text_area :comments %>
 
         <%= submit_tag 'Submit', :class => 'button' %>
+
+        <% if @guests.size == 1 %>
+          <p class="footnote">* Due to the intimate nature of our wedding, we unfortunately cannot accomodate a "plus-1" for every guest. Please email us if you have any questions!</p>
+        <% end %>
+
       <% end %>
     </div>
   </div>
