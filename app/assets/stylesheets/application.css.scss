@@ -378,17 +378,26 @@ form.guest {
 }
 
 .registry {
+  p {
+    margin-bottom: 30px;
+  }
   a {
     display: block;
     text-align: center;
+    margin-bottom: 30px;
     img {
-      margin: 15px 0;
       &#ws {
         width: 400px;
       }
       &#cb {
         width: 300px;
       }
+    }
+  }
+  .flatty {
+    text-align: center;
+    img {
+      width: 250px;
     }
   }
 }
