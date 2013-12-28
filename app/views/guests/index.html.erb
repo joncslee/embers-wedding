@@ -1,32 +1,71 @@
+<% if params[:respond].present? %>
 
-<table>
-  <tr>
-    <th>Token</th>
-    <th>Name</th>
-    <th>Coming?</th>
-    <th>Dietary Restrictions</th>
-    <th>Hotel?</th>
-    <th>Comments</th>
-  </tr>
-  <% @invitations.each do |i| %>
+  <div class="row">
+    <div class="large-4 columns">
+      <h2>Coming (<%= @yes.size %>)</h2>
+      <ul>
+        <% @yes.each do |guest| %>
+          <% if guest.first_name.present? %>
+            <li><%= guest.first_name %> <%= guest.last_name %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="large-4 columns">
+      <h2>Not Coming (<%= @no.size %>)</h2>
+      <ul>
+        <% @no.each do |guest| %>
+          <% if guest.first_name.present? %>
+            <li><%= guest.first_name %> <%= guest.last_name %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="large-4 columns">
+      <h2>Undecided (<%= @undecided.size %>)</h2>
+      <ul>
+        <% @undecided.each do |guest| %>
+          <% if guest.first_name.present? %>
+            <li><%= guest.first_name %> <%= guest.last_name %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+<% else %>
+  <%= link_to 'Response Lists', '/guests?respond=1' %>
+
+  <table>
     <tr>
-      <td><%= i.token %></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><%= i.hotel %></td>
-      <td><%= i.comments %></td>
+      <th>Token</th>
+      <th>Name</th>
+      <th>Coming?</th>
+      <th>Dietary Restrictions</th>
+      <th>Hotel?</th>
+      <th>Comments</th>
     </tr>
-    <% i.guests.each do |g| %>
+    <% @invitations.each do |i| %>
       <tr>
+        <td><%= i.token %></td>
         <td></td>
-        <td><%= link_to "#{g.first_name} #{g.last_name}", g %></td>
-        <td><%= g.confirmation %></td>
-        <td><%= g.dietary_restrictions %></td>
+        <td></td>
+        <td></td>
+        <td><%= i.hotel %></td>
+        <td><%= i.comments %></td>
       </tr>
+      <% i.guests.each do |g| %>
+        <tr>
+          <td></td>
+          <td><%= link_to "#{g.first_name} #{g.last_name}", g %></td>
+          <td><%= g.confirmation %></td>
+          <td><%= g.dietary_restrictions %></td>
+        </tr>
+      <% end %>
     <% end %>
-  <% end %>
-</table>
+  </table>
 
-<p><%= link_to "New Guest", new_guest_path %></p>
-
+  <p><%= link_to "New Guest", new_guest_path %></p>
+<% end %>

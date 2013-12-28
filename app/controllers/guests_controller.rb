@@ -4,6 +4,11 @@ class GuestsController < ApplicationController
 
   def index
     @invitations = Invitation.all
+    if params[:respond].present?
+      @yes = Guest.all.keep_if { |guest| guest.not_coming == false }
+      @no = Guest.all.keep_if { |guest| guest.not_coming == true }
+      @undecided = Guest.all.keep_if { |guest| guest.not_coming.nil? }
+    end
   end
 
   def show
